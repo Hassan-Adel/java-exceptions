@@ -11,8 +11,14 @@ public class ExceptionsDemo
     }
 
     //Checked exception because java compiler checks them in runtime
-    public static void showCheckedException() throws FileNotFoundException {
-        var reader = new FileReader("");
+    public static void showCheckedException() {
+        try {
+            var reader = new FileReader("");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("File doesn't exist!");
+        }
+        System.out.println("File opened");
     }
 
     private static void sayHello(String string) {
