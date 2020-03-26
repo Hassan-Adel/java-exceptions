@@ -19,13 +19,8 @@ public class ExceptionsDemo
             var reader = new FileReader("");
             var value = reader.read();
             new SimpleDateFormat().parse("");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("File doesn't exist!");
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             System.out.println("cannot read data!");
-        } catch (ParseException e) {
-            System.out.println("cannot parse date");
         }
         System.out.println("File opened");
     }
