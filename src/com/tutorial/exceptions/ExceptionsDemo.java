@@ -48,7 +48,8 @@ public class ExceptionsDemo
         var account = new Account();
         try{
             account.withdraw(-1);
-        }catch (InsufficientFundsException e){
+        }catch (AccountException e){
+            var cause = e.getCause();
             System.out.println(e.getMessage());
         }
     }
