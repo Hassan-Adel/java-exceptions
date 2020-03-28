@@ -38,9 +38,18 @@ public class ExceptionsDemo
         try{
             account.deposit(-1);
             throw new IOException();
-        }catch (IOException e){
+        }catch (Throwable e){
             System.out.println("Logger");
             throw e;
+        }
+    }
+
+    public static void show3(){
+        var account = new Account();
+        try{
+            account.withdraw(-1);
+        }catch (InsufficientFundsException e){
+            System.out.println(e.getMessage());
         }
     }
 
