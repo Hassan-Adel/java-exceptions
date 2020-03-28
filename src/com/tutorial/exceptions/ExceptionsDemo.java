@@ -32,4 +32,16 @@ public class ExceptionsDemo
     private static void sayHello(String string) {
         System.out.println(string.toUpperCase());
     }
+
+    public static void show2() throws IOException{
+        var account = new Account();
+        try{
+            account.deposit(-1);
+            throw new IOException();
+        }catch (IOException e){
+            System.out.println("Logger");
+            throw e;
+        }
+    }
+
 }
